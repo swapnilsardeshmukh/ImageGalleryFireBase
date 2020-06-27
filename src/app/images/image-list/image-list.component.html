@@ -1,0 +1,42 @@
+
+<div class="imagebox">
+  <a routerLink="/image/upload">
+    <img src="/assets/img/default2.jpg" class="img-fluid">
+    <span class="imagebox-desc">Insert New Image</span></a>
+</div>
+
+<blockquote class="blockquote text-center" style="color: rgb(255, 255, 255);">
+  <p class="mb-0 h4 display-5">NATURE VIBES it is collection of Images that are collected from Nature In Maharashtra</p>
+</blockquote>
+
+
+<table *ngIf="imageList">
+
+  
+  <tr *ngFor="let i of rowIndexArray">
+    <td>
+      <div class="imagebox" *ngIf="imageList[3*i+2]">
+          
+          <img [src]="imageList[3*i+2].imageUrl" class="img-fluid" width=300px height=300px>
+          <span class="imagebox-desc">{{imageList[3*i+2].caption}}</span>
+        </div>
+    </td>
+
+  
+     <td *ngIf="imageList[3*i]">
+        <div class="imagebox">
+          
+          <img [src]="imageList[3*i].imageUrl" class="img-fluid" width=300px height=300px>
+          <span class="imagebox-desc">{{imageList[3*i].caption}}</span>
+        </div>
+      </td>
+
+      <td *ngIf="imageList[3*i+1]">
+        <div class="imagebox">
+          <img [src]="imageList[3*i+1].imageUrl" class="img-fluid" width=300px height=300px>
+          <span class="imagebox-desc">{{imageList[3*i+1].caption}}</span>
+        </div>
+      </td>
+  
+    </tr>
+  </table>
